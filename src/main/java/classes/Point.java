@@ -46,7 +46,7 @@ public class Point {
         rowMin = arrRowMin[0];
         rowIndex = 0;
         for (int i = 1; i < N; i++) {
-            if(arrRowMin[i] < rowMin) {
+            if(arrRowMin[i] > rowMin) {
                 rowMin = arrRowMin[i];
                 rowIndex = i;
             }
@@ -64,7 +64,7 @@ public class Point {
         return arr[rowIndex][colIndex] == rowMin && rowMin == columnMax;
     }
 
-    private double rowMinimum(double[][] arr, int row) {
+    public double rowMinimum(double[][] arr, int row) {
         double min = arr[row][0];
 
         for(int i = 1; i < M; i++) {
@@ -76,7 +76,7 @@ public class Point {
         return min;
     }
 
-    private double colMaximum(double[][] arr, int col) {
+    public double colMaximum(double[][] arr, int col) {
         double max = arr[0][col];
 
         for(int i = 1; i < N; i++) {
@@ -86,6 +86,30 @@ public class Point {
         }
 
         return max;
+    }
+
+    public double[][] getArr() {
+        return arr;
+    }
+
+    public void setArr(double[][] arr) {
+        this.arr = arr;
+    }
+
+    public int getN() {
+        return N;
+    }
+
+    public void setN(int n) {
+        N = n;
+    }
+
+    public int getM() {
+        return M;
+    }
+
+    public void setM(int m) {
+        M = m;
     }
 
     @Override
